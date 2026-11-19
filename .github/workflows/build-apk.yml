@@ -12,15 +12,20 @@ jobs:
         run: |
           curl -fL -o source.zip "https://muse.ai/files/1376596115547221/1165509479164209/j3p6bhzkq0z4j0lociw05pqj/SmartTube-YT-Style-source.zip"
           unzip -q source.zip
-      - name: Set up JDK 11
+      - name: Set up JDK 17 for SDK tools
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '11'
+          java-version: '17'
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
       - name: Install SDK packages
         run: sdkmanager "platforms;android-34" "build-tools;30.0.3"
+      - name: Set up JDK 11 for the build
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
       - name: Build APK
         working-directory: SmartTube
         run: |
