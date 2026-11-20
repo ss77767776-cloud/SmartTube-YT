@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download restyled source
         run: |
-          curl -fL -o source.zip "https://muse.ai/files/1376596115547221/1165509479164209/j3p6bhzkq0z4j0lociw05pqj/SmartTube-YT-Style-source.zip"
+          curl -fL -o source.zip "https://muse.ai/files/1376596115547221/1464569725636570/ct228ekvya5o6vaiw5arvebe/SmartTube-YT-Style-source-v2.zip"
           unzip -q source.zip
       - name: Set up JDK 17 for SDK tools
         uses: actions/setup-java@v4
